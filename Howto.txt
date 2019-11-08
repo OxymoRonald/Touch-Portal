@@ -1,0 +1,15 @@
+When I installed the app on Windows I noticed it was listening on a virtual network adapter. This meant there was no way for me to connect the phone app to the desktop app.
+Turns out, Touch portal connects to the first network it encounters, this means the network with the lowest Interface metric. Now without getting to technical, here's how to fix it.
+1. Open Touch Portal, and check the IP it is listening on. 
+
+2. Then completely exit Touch Portal (through the little icon in the traybar).
+
+3. Open powershell as an administrator. (click Start, type powershell, rightclick "Windows Powershell" and select "Run as an Administrator").
+
+4. In powershell type "Get-NetIPInterface" and find the network you want Touch Portal to connect to. Also take note of the other network adapters values under "InterfaceMetric".
+
+5. In powershell type "Set-NetIPInterface -InterfaceIndex ID -InterfaceMetric VALUE" where ID is the interface (ifIndex) you want to change and VALUE is the value you want to set it to. (Make sure this is the lowest value in the list).
+
+6. Now type "Get-NetIPInterface" to check your changes.
+
+7. Start Touch Portal again. It should now show the correct network.
