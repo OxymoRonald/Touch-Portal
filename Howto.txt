@@ -1,6 +1,6 @@
 When I installed the app on Windows I noticed it was listening on a virtual network adapter. This meant there was no way for me to connect the phone app to the desktop app.
 Turns out, Touch portal connects to the first network it encounters, this means the network with the lowest Interface metric. Now without getting to technical, here's how to fix it.
-1. Open Touch Portal, and check the IP it is listening on. 
+1. Open Touch Portal, and check the IP it is listening on. (bottom left) 
 
 2. Then completely exit Touch Portal (through the little icon in the traybar).
 
